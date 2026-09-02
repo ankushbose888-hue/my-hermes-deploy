@@ -2,6 +2,7 @@ providers:
   groq:
     api: https://api.groq.com/openai/v1
     key_env: GROQ_API_KEY
+    context_length: 131072
 model:
   default: openai/gpt-oss-120b
   provider: custom:groq
