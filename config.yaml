@@ -5,7 +5,7 @@ providers:
     key_env: GROQ_API_KEY
     context_length: 131072
 model:
-  default: openai/gpt-oss-120b
+  default: llama-3.1-8b-instant
   provider: custom:groq
 toolsets:
   - web
