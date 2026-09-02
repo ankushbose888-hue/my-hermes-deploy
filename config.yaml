@@ -1,13 +1,28 @@
-_config_version: 10
-providers:
-  groq:
-    api: https://api.groq.com/openai/v1
-    key_env: GROQ_API_KEY
-    context_length: 131072
+_config_version: 39
 model:
   default: openai/gpt-oss-20b
-  provider: custom:groq
-toolsets:
-  - web
-  - terminal
-  - file
+  provider: custom
+  base_url: https://api.groq.com/openai/v1
+  api_key: ${GROQ_API_KEY}
+  api_mode: chat_completions
+custom_providers:
+  - name: Groq
+    base_url: https://api.groq.com/openai/v1
+    key_env: GROQ_API_KEY
+    model: openai/gpt-oss-20b
+    api_mode: chat_completions
+    models:
+      openai/gpt-oss-20b:
+        context_length: 131072
+terminal:
+  backend: local
+  cwd: /opt/data
+platform_toolsets:
+  telegram:
+    - file
+    - memory
+    - session_search
+    - skills
+    - terminal
+    - todo
+    - web
