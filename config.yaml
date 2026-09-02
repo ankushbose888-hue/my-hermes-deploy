@@ -1,3 +1,4 @@
+_config_version: 10
 providers:
   groq:
     api: https://api.groq.com/openai/v1
@@ -6,11 +7,7 @@ providers:
 model:
   default: openai/gpt-oss-120b
   provider: custom:groq
-agent:
-  disabled_toolsets:
-    - browser
-    - computer_use
-    - image_generation
-    - video_generation
-    - discord
-    - a2a
+toolsets:
+  - web
+  - terminal
+  - file
