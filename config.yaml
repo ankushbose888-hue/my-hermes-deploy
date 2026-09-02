@@ -1,0 +1,7 @@
+providers:
+  groq:
+    api: https://api.groq.com/openai/v1
+    key_env: GROQ_API_KEY
+model:
+  default: llama-3.3-70b-versatile
+  provider: custom:groq
